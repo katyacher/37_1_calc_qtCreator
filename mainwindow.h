@@ -19,8 +19,9 @@ public:
 private:
     Ui::MainWindow *ui;
     QString calculate(const QString& op);
-private slots:
-    void culcClicked();
 
+private slots:
+    void calcClicked();
 };
+
 #endif // MAINWINDOW_H

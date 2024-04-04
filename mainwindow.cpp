@@ -6,14 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pushButton_plus, SIGNAL(clicked()), this, SLOT(culcClicked()));
-    connect(ui->pushButton_minus, SIGNAL(clicked()), this, SLOT(culcClicked()));
-    connect(ui->pushButton_mult, SIGNAL(clicked()), this, SLOT(culcClicked()));
-    connect(ui->pushButton_div, SIGNAL(clicked()), this, SLOT(culcClicked()));
-
-
-
-
+    connect(ui->pushButton_plus, SIGNAL(clicked()), this, SLOT(calcClicked()));
+    connect(ui->pushButton_minus, SIGNAL(clicked()), this, SLOT(calcClicked()));
+    connect(ui->pushButton_mult, SIGNAL(clicked()), this, SLOT(calcClicked()));
+    connect(ui->pushButton_div, SIGNAL(clicked()), this, SLOT(calcClicked()));
 }
 
 MainWindow::~MainWindow()
@@ -48,7 +44,7 @@ QString MainWindow::calculate(const QString& op){
 
 
 
-void MainWindow::culcClicked(){
+void MainWindow::calcClicked(){
     QPushButton  *button = (QPushButton *)sender(); //возвращает кнопку
     ui->lineEdit_operator->setText(button->text());
     ui->lineEdit_result->setText(calculate(button->text()));
